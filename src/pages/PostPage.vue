@@ -62,11 +62,7 @@ export default {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-      })
-        .then(response => response.json())
-        .then(json => {
-          console.log('response: ' + JSON.stringify(json));
-        });
+      }).then(response => response.json());
     },
   },
 
