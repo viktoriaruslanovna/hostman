@@ -1,11 +1,11 @@
 <template>
   <div class="post__page">
     <div class="btns__wrapper">
-      <ButtonPlus class="btn__plus" @click="showDialog" />
+      <!-- <ButtonPlus class="btn__plus" @click="showDialog" /> -->
       <Select v-model:selectedSort="selectedSort" :options="options" />
     </div>
     <Title>Посты</Title>
-    <CreatePostModal @addPost="addPost" v-model:visibleModal="visibleModal" />
+    <!-- <CreatePostModal @addPost="addPost" v-model:visibleModal="visibleModal" /> -->
 
     <PostItem
       v-for="post in sortedPosts"
@@ -51,19 +51,19 @@ export default {
       this.visibleModal = true;
     },
 
-    addPost(newPost) {
-      fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        body: JSON.stringify({
-          title: newPost.title,
-          body: newPost.body,
-          userId: 1,
-        }),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      }).then(response => response.json());
-    },
+    // addPost(newPost) {
+    //   fetch('https://jsonplaceholder.typicode.com/posts', {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //       title: newPost.title,
+    //       body: newPost.body,
+    //       userId: 1,
+    //     }),
+    //     headers: {
+    //       'Content-type': 'application/json; charset=UTF-8',
+    //     },
+    //   }).then(response => response.json());
+    // },
   },
 
   setup() {
